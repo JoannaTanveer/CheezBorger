@@ -1,0 +1,40 @@
+<div class="header">
+
+</div>
+
+<h1>Cheez Borger</h1>
+
+<div class='form'>
+    <form>
+       <label for="burger">Wat kine you like?</label>
+        <input type="text" id='burger' name='burger'>
+        <br>
+        <button class='submit' type='submit'>Chomp Chomp</button>
+    </form>
+</div>
+
+<div class='toeat'>
+    <h2>I can has</h2>
+
+    <ul>
+    {{ #each burger }}
+        {{ #unless eaten}}
+            {{> burgers eaten=false}}
+        {{ /unless}}
+    {{ /each }}
+    </ul>
+
+</div>
+
+<div class='eaten'>
+    <h2>Iz fav!</h2>
+
+    <ul>
+    {{ #each burger }}
+        {{ #if eaten}}
+            {{> burgers eaten=true}}
+        {{ /if}}
+    {{ /each }}
+    </ul>
+
+</div>
