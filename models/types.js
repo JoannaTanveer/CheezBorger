@@ -1,22 +1,20 @@
-const { types } = require("util");
+const orm =require("../config/orm");
 
-module.exports = function(sequelize, DataTypes) {
-    let Types = sequelize.define('Types', {
-        id : {
-            type: DataTypes.INTEGER,
-            allowNull: false
+const types = {
+    all: function (cb) {
+        orm.all("types", function (res) {
+            cb(res)
+        })
+    },
 
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        eaten: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
-        }
-    });
+    create: function (vals, cb) {
+        orm.create('types', ["name" + "eaten"], [vals, false], cb )
+    },
 
-    return Types;
-}
+    update: function (id, cb) {
+        const condition = "id=" + id
+        orm.update("types", {eaten:true}, condition, cb )
+    }
+};
+
+module.exports = types;
