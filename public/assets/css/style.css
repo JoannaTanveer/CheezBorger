@@ -1,0 +1,42 @@
+body {
+    display:grid;
+    grid-template-columns: 50px 1fr 200px 1fr 50px;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    background-image: url(../images/mustard-and-ketchup-seamless-pattern-vector-20014758.jpg);
+    flex-wrap: wrap;
+}
+
+.title {
+    justify-content: center;
+    grid-column-start: 3;
+}
+
+.form {
+    justify-content: center;
+    grid-column-start: 3;
+    font-size: 24px;
+    font-weight: bold ;
+}
+
+.toeat {
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 2;
+}
+
+.eaten {
+    justify-content: center;
+    grid-column-start: 4;
+}
+
+button {
+    font-weight: bold;
+    color: green;
+}
+
+.cat {
+    grid-row-start: 4;
+    grid-column-start: 2;
+    background-image: url(../images/cute-cat-and-big-hamburger-vector-8315554.jpg);
+    background-size: 100%;
+}

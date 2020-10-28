@@ -2,7 +2,7 @@
 
 </div>
 
-<h1>Cheez Borger</h1>
+<h1 class="title">Cheez Borger</h1>
 
 <div class='form'>
     <form>
@@ -14,13 +14,13 @@
 </div>
 
 <div class='toeat'>
-    <h2>I can has</h2>
+    <h1>I can has</h1>
 
     <ul>
     {{#each name}}
         {{#unless this.eaten}}
        <li>
-          <div class="nameId">{{this.id}}</div> . {{this.name}} <button data-id={{this.id}} type='submit' class='submit'>EAT ME!</button>
+          <span class="nameId">{{this.id}}</span>. {{this.name}} <button data-id={{this.id}} type='submit' class='submit'>EAT ME!</button>
 
        </li>
        
@@ -31,17 +31,20 @@
 </div>
 
 <div class='eaten'>
-    <h2>Iz fav!</h2>
+    <h1>Iz fav!</h1>
 
     <ul>
     {{#each name}}
         {{#if this.eaten}}
         <li>
-          <div class="nameId">{{this.id}}</div> . {{this.name}} 
+          <span class="nameId">{{this.id}}</span>. {{this.name}} 
 
        </li>
         {{/if}}
     {{/each}}
     </ul>
 
+</div>
+<div class="cat">
+    
 </div>
