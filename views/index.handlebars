@@ -9,7 +9,7 @@
        <label for="burger">Wat kine you like?</label>
         <input type="text" id='burger' name='burger'>
         <br>
-        <button class='submit' type='submit'>Chomp Chomp</button>
+        <button class='chomp' type='submit'>Chomp Chomp</button>
     </form>
 </div>
 
@@ -17,11 +17,15 @@
     <h2>I can has</h2>
 
     <ul>
-    {{ #each burger }}
-        {{ #unless eaten}}
-            {{> burgers eaten=false}}
-        {{ /unless}}
-    {{ /each }}
+    {{#each name}}
+        {{#unless this.eaten}}
+       <li>
+          <div class="nameId">{{this.id}}</div> . {{this.name}} <button data-id={{this.id}} type='submit' class='submit'>EAT ME!</button>
+
+       </li>
+       
+        {{/unless}}
+    {{/each}}
     </ul>
 
 </div>
@@ -30,11 +34,14 @@
     <h2>Iz fav!</h2>
 
     <ul>
-    {{ #each burger }}
-        {{ #if eaten}}
-            {{> burgers eaten=true}}
-        {{ /if}}
-    {{ /each }}
+    {{#each name}}
+        {{#if this.eaten}}
+        <li>
+          <div class="nameId">{{this.id}}</div> . {{this.name}} 
+
+       </li>
+        {{/if}}
+    {{/each}}
     </ul>
 
 </div>

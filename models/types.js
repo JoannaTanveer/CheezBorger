@@ -8,7 +8,7 @@ const types = {
     },
 
     create: function (vals, cb) {
-        orm.create('types', ["name" + "eaten"], [vals, false], cb )
+        orm.create('types', ["name" , "eaten"], [vals, false], cb )
     },
 
     update: function (id, cb) {

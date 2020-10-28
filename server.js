@@ -1,33 +1,21 @@
-//Requiring necessary npm packages
-const express = require("express");
-const handlebars = require("express-handlebars");
+var express = require("express");
+var PORT = process.env.PORT || 8000;
+var app = express();
 
 
-// Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 8080;
-const db = require("./models");
-
-// Creating express app and configuring middleware needed for authentication
-const app = express();
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(express.static("public"));
 
 
-app.engine("handlebars", handlebars({ defaultlayout: "main" }));
-app.set("view engine", "handlebars");
-// Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
-  
-  app.listen(PORT, () => {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+var routes = require("./routes/apiroutes.js");
+app.use(routes);
+
+app.listen(PORT, function() {
+  console.log("Listening on port:%s", PORT);
 });
