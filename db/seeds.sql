@@ -1,2 +1,2 @@
-INSERT INTO types (name, eaten) SET ("bacon cheese burger", FALSE);
-INSERT INTO types (name, eaten) SET ("impossible burger", FALSE);
+INSERT INTO types (name, eaten) VALUES ("bacon cheese burger", FALSE);
+INSERT INTO types (name, eaten) VALUES ("impossible burger", FALSE);
