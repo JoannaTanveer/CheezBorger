@@ -17,20 +17,14 @@ connection.connect(function(err) {
     return;
   }
   console.log("connected as id " + connection.threadId)
-  connection.query(`DROP DATABASE IF EXISTS hamburger_db;
-  CREATE DATABASE hamburger_db;
-  
-  USE hamburger_db;
-  DROP TABLE IF EXISTS types;
-  
-  CREATE TABLE types (
-      id INT AUTO_INCREMENT NOT NULL,
-      name VARCHAR(255) NOT NULL,
-      eaten BOOLEAN DEFAULT false,
-      PRIMARY KEY (id)
+  connection.query(
+    "DROP DATABASE IF EXISTS hamburger_db;" +
+    "CREATE DATABASE hamburger_db;" +
+    "USE hamburger_db;" +
+    "DROP TABLE IF EXISTS types;" +
+    "CREATE TABLE types (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, eaten BOOLEAN DEFAULT false, PRIMARY KEY (id));"
   );
-  `)
-  });
+});
 
 
 module.exports = connection;
