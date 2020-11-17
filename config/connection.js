@@ -17,9 +17,8 @@ connection.connect(function(err) {
     return;
   }
   console.log("connected as id " + connection.threadId)
-  connection.query(schema, () => {
-    connection.query(seed)
-  })
-});
+  connection.query(schema)
+  });
+
 
 module.exports = connection;
