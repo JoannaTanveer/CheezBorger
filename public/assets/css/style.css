@@ -41,4 +41,7 @@ button {
     grid-column-start: 2;
     background-image: url(../images/cute-cat-and-big-hamburger-vector-8315554.jpg);
     background-size: 100%;
+    max-width: 100%;
+    height: auto;
+    
 }
