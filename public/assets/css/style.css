@@ -1,7 +1,7 @@
 body {
     display:grid;
     grid-template-columns: 50px 1fr 200px 1fr 50px;
-    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 500px;
     background-image: url(../images/mustard-and-ketchup-seamless-pattern-vector-20014758.jpg);
     flex-wrap: wrap;
 }
@@ -39,9 +39,10 @@ button {
 .cat {
     grid-row-start: 4;
     grid-column-start: 2;
-    background-image: url(../images/cute-cat-and-big-hamburger-vector-8315554.jpg);
-    background-size: 100%;
-    max-width: 100%;
+    grid-column-end: 6;
+    background-image: url(../images/billygoat-1_317web-1024x683.jpg);
+    
+    width: 1000px;
     height: auto;
     
 }
