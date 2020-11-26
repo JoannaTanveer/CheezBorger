@@ -25,17 +25,8 @@ The technologies utilized in this application are as follows: MySQL database, He
     
 ### Installation
     
-To run this application successfully follow these steps:
-1. Install [CheezBorger](https://github.com/JoannaTanveer/CheezBorger) to your local drive vis terminal/GitBash. This will install the package.json file which contains a list of all the dependencies for this application. 
+persistent [link](https://pure-spire-49584.herokuapp.com/burgers) to CheezBorger Application
 
-2. Verify that node is installed in your computer by typing 'node' in the terminal/GitBash. If it returns
-    >Welcome to Node.js v12.14.1. (or higher)
-    >
-    >Type ".help" for more information.
-    
- Node.js is installed in your computer. If nothing happens or there is an error, visit [Node.js](https://nodejs.org/) and install the LTS version.
-3. Type 'npm install' while in the terminal to install the dependencies. 
-4. Type node server.js once in the directory to launch the server. 
 
 ### Usage
     
